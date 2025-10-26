@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoPedido));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CbxNombres = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.CbxProducto = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TxtStock = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.DgvProductos = new System.Windows.Forms.DataGridView();
             this.BtnAgregar = new System.Windows.Forms.Button();
@@ -47,11 +51,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.DtpFecha = new System.Windows.Forms.DateTimePicker();
             this.BtnBorrar = new System.Windows.Forms.Button();
+            this.NudCantidad = new System.Windows.Forms.NumericUpDown();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.PrtVentana = new System.Windows.Forms.PrintDialog();
+            this.PrtDocumento = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudCantidad)).BeginInit();
@@ -123,18 +129,6 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "NOMBRE DEL PRODCUTO";
             // 
-            // TxtStock
-            // 
-            this.TxtStock.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtStock.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtStock.Location = new System.Drawing.Point(468, 261);
-            this.TxtStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtStock.Name = "TxtStock";
-            this.TxtStock.ReadOnly = true;
-            this.TxtStock.Size = new System.Drawing.Size(335, 30);
-            this.TxtStock.TabIndex = 27;
-            this.TxtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -148,6 +142,14 @@
             // DgvProductos
             // 
             this.DgvProductos.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -157,6 +159,14 @@
             this.DgvProductos.Location = new System.Drawing.Point(68, 359);
             this.DgvProductos.Margin = new System.Windows.Forms.Padding(8);
             this.DgvProductos.Name = "DgvProductos";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.DgvProductos.RowHeadersWidth = 51;
             this.DgvProductos.RowTemplate.Height = 24;
             this.DgvProductos.Size = new System.Drawing.Size(735, 315);
@@ -197,12 +207,12 @@
             // 
             this.BtnGuardar.BackColor = System.Drawing.Color.Green;
             this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.Location = new System.Drawing.Point(521, 745);
+            this.BtnGuardar.Location = new System.Drawing.Point(490, 745);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(236, 37);
+            this.BtnGuardar.Size = new System.Drawing.Size(313, 37);
             this.BtnGuardar.TabIndex = 34;
-            this.BtnGuardar.Text = "GUARDAR PEDIDO";
+            this.BtnGuardar.Text = "GUARDAR E IMPRIMIR PEDIDO";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
@@ -210,10 +220,10 @@
             // 
             this.BtnCancelar.BackColor = System.Drawing.Color.Red;
             this.BtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelar.Location = new System.Drawing.Point(94, 745);
+            this.BtnCancelar.Location = new System.Drawing.Point(68, 745);
             this.BtnCancelar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(241, 37);
+            this.BtnCancelar.Size = new System.Drawing.Size(313, 37);
             this.BtnCancelar.TabIndex = 33;
             this.BtnCancelar.Text = "CANCELAR PEDIDO";
             this.BtnCancelar.UseVisualStyleBackColor = false;
@@ -249,8 +259,17 @@
             this.BtnBorrar.UseVisualStyleBackColor = true;
             this.BtnBorrar.Click += new System.EventHandler(this.BtnBorrar_Click);
             // 
+            // NudCantidad
+            // 
+            this.NudCantidad.Location = new System.Drawing.Point(422, 259);
+            this.NudCantidad.Name = "NudCantidad";
+            this.NudCantidad.Size = new System.Drawing.Size(128, 32);
+            this.NudCantidad.TabIndex = 38;
+            // 
             // Column1
             // 
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column1.HeaderText = "PRODUCTO";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
@@ -258,6 +277,8 @@
             // 
             // Column5
             // 
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column5.HeaderText = "CANTIDAD";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
@@ -265,6 +286,8 @@
             // 
             // Column3
             // 
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column3.HeaderText = "Precio";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
@@ -272,20 +295,22 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column2.HeaderText = "SUBTOTAL";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.Width = 150;
             // 
-            // NudCantidad
+            // PrtVentana
             // 
-            this.NudCantidad.Location = new System.Drawing.Point(338, 261);
-            this.NudCantidad.Name = "NudCantidad";
-            this.NudCantidad.Size = new System.Drawing.Size(88, 32);
-            this.NudCantidad.TabIndex = 38;
+            this.PrtVentana.UseEXDialog = true;
+            // 
+            // PrtDocumento
+            // 
+            this.PrtDocumento.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrtDocumento_PrintPage);
             // 
             // FrmNuevoPedido
             // 
@@ -303,7 +328,6 @@
             this.Controls.Add(this.LblTotal);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.DgvProductos);
-            this.Controls.Add(this.TxtStock);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.CbxProducto);
             this.Controls.Add(this.label3);
@@ -333,7 +357,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox CbxProducto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtStock;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView DgvProductos;
         private System.Windows.Forms.Button BtnAgregar;
@@ -344,10 +367,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker DtpFecha;
         private System.Windows.Forms.Button BtnBorrar;
+        private System.Windows.Forms.NumericUpDown NudCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.NumericUpDown NudCantidad;
+        private System.Windows.Forms.PrintDialog PrtVentana;
+        private System.Drawing.Printing.PrintDocument PrtDocumento;
     }
 }

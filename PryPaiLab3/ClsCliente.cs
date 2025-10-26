@@ -206,5 +206,32 @@ namespace PryPaiLab3
                 MessageBox.Show(e.ToString());
             }
         }
+        //------------------------------ total cliente ------------------------------
+        public void TotalClientes(Label etiqueta)
+        {
+            try
+            {
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = tabla;
+                OleDbDataReader Dr = comando.ExecuteReader();
+                Int32 contador = 0;
+                if (Dr.HasRows)
+                {
+                    while (Dr.Read())
+                    {
+                        contador = contador + 1;
+                    }
+                }
+                etiqueta.Text = contador.ToString();
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
     }
 }

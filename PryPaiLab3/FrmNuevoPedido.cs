@@ -63,11 +63,26 @@ namespace PryPaiLab3
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            pedido.IdCli = Convert.ToInt32(CbxNombres.SelectedValue);
-            pedido.Fecha = DtpFecha.Value;
-            pedido.Guardar(pila);
-            MessageBox.Show("Pedido guardado correctamente");
-            Limpiar();
+            DialogResult resultado = MessageBox.Show("¿Guardar pedido?", "Confirmar", MessageBoxButtons.YesNo);
+
+            if (resultado == DialogResult.Yes)
+            {
+                pedido.IdCli = Convert.ToInt32(CbxNombres.SelectedValue);
+                pedido.Fecha = DtpFecha.Value;
+                pedido.Guardar(pila);
+
+                DialogResult imprimirResultado = MessageBox.Show("¿Imprimir pedido?", "Imprimir", MessageBoxButtons.YesNo);
+
+                if (imprimirResultado == DialogResult.Yes)
+                {
+                    if (PrtVentana.ShowDialog() == DialogResult.OK) 
+                    {
+                        PrtDocumento.PrinterSettings = PrtVentana.PrinterSettings;
+                        PrtDocumento.Print();
+                    }
+                }
+                Limpiar();
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -81,6 +96,12 @@ namespace PryPaiLab3
             DgvProductos.Rows.Clear();
             LblTotal.Text = "0";
             pila.Primero = null;
+        }
+
+        private void PrtDocumento_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            pedido.ImprimirPedido(e);
+
         }
     }
 }
