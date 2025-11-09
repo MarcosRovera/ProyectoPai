@@ -31,25 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTotalPorCliente));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.CbxNombres = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.DgvProductos = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvTotalPorPedido = new System.Windows.Forms.DataGridView();
+            this.ColPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTotalPagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.LblTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LblPagado = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.LblSaldo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTotalPorPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -108,64 +110,71 @@
             this.BtnBuscar.TabIndex = 28;
             this.BtnBuscar.Text = "BUSCAR";
             this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // DgvProductos
+            // DgvTotalPorPedido
             // 
-            this.DgvProductos.BackgroundColor = System.Drawing.Color.White;
-            this.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column5,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.DgvProductos.Location = new System.Drawing.Point(36, 262);
-            this.DgvProductos.Margin = new System.Windows.Forms.Padding(8);
-            this.DgvProductos.Name = "DgvProductos";
-            this.DgvProductos.RowHeadersWidth = 51;
-            this.DgvProductos.RowTemplate.Height = 24;
-            this.DgvProductos.Size = new System.Drawing.Size(835, 334);
-            this.DgvProductos.TabIndex = 29;
+            this.DgvTotalPorPedido.BackgroundColor = System.Drawing.Color.White;
+            this.DgvTotalPorPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvTotalPorPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColPedido,
+            this.ColFecha,
+            this.ColTotal,
+            this.ColTotalPagado,
+            this.ColSaldo});
+            this.DgvTotalPorPedido.Location = new System.Drawing.Point(36, 262);
+            this.DgvTotalPorPedido.Margin = new System.Windows.Forms.Padding(8);
+            this.DgvTotalPorPedido.Name = "DgvTotalPorPedido";
+            this.DgvTotalPorPedido.RowHeadersWidth = 51;
+            this.DgvTotalPorPedido.RowTemplate.Height = 24;
+            this.DgvTotalPorPedido.Size = new System.Drawing.Size(835, 334);
+            this.DgvTotalPorPedido.TabIndex = 29;
             // 
-            // Column1
+            // ColPedido
             // 
-            this.Column1.HeaderText = "N° PEDIDO";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.ColPedido.HeaderText = "N° PEDIDO";
+            this.ColPedido.MinimumWidth = 6;
+            this.ColPedido.Name = "ColPedido";
+            this.ColPedido.Width = 125;
             // 
-            // Column5
+            // ColFecha
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column5.HeaderText = "FECHA";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 250;
+            this.ColFecha.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColFecha.HeaderText = "FECHA";
+            this.ColFecha.MinimumWidth = 6;
+            this.ColFecha.Name = "ColFecha";
+            this.ColFecha.Width = 250;
             // 
-            // Column2
+            // ColTotal
             // 
             dataGridViewCellStyle2.Format = "C2";
             dataGridViewCellStyle2.NullValue = null;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column2.HeaderText = "TOTAL PEDIDO";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 160;
+            this.ColTotal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColTotal.HeaderText = "TOTAL PEDIDO";
+            this.ColTotal.MinimumWidth = 6;
+            this.ColTotal.Name = "ColTotal";
+            this.ColTotal.Width = 160;
             // 
-            // Column3
+            // ColTotalPagado
             // 
-            this.Column3.HeaderText = "TOTAL PAGADO";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.ColTotalPagado.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColTotalPagado.HeaderText = "TOTAL PAGADO";
+            this.ColTotalPagado.MinimumWidth = 6;
+            this.ColTotalPagado.Name = "ColTotalPagado";
+            this.ColTotalPagado.Width = 125;
             // 
-            // Column4
+            // ColSaldo
             // 
-            this.Column4.HeaderText = "SALDO PENDIENTE";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ColSaldo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ColSaldo.HeaderText = "SALDO PENDIENTE";
+            this.ColSaldo.MinimumWidth = 6;
+            this.ColSaldo.Name = "ColSaldo";
+            this.ColSaldo.Width = 125;
             // 
             // label5
             // 
@@ -199,15 +208,15 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "TOTAL PAGADO";
             // 
-            // label4
+            // LblPagado
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(478, 617);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 27);
-            this.label4.TabIndex = 35;
+            this.LblPagado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblPagado.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPagado.ForeColor = System.Drawing.Color.Black;
+            this.LblPagado.Location = new System.Drawing.Point(478, 617);
+            this.LblPagado.Name = "LblPagado";
+            this.LblPagado.Size = new System.Drawing.Size(127, 27);
+            this.LblPagado.TabIndex = 35;
             // 
             // label6
             // 
@@ -220,29 +229,29 @@
             this.label6.TabIndex = 38;
             this.label6.Text = "SALDO";
             // 
-            // label7
+            // LblSaldo
             // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(744, 618);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 27);
-            this.label7.TabIndex = 37;
+            this.LblSaldo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblSaldo.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSaldo.ForeColor = System.Drawing.Color.Black;
+            this.LblSaldo.Location = new System.Drawing.Point(744, 618);
+            this.LblSaldo.Name = "LblSaldo";
+            this.LblSaldo.Size = new System.Drawing.Size(127, 27);
+            this.LblSaldo.TabIndex = 37;
             // 
             // FrmTotalPorCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(907, 734);
+            this.ClientSize = new System.Drawing.Size(912, 734);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.LblSaldo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.LblPagado);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.LblTotal);
-            this.Controls.Add(this.DgvProductos);
+            this.Controls.Add(this.DgvTotalPorPedido);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -255,7 +264,7 @@
             this.Text = "TOTAL POR CLIENTE";
             this.Load += new System.EventHandler(this.FrmTotalPorCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTotalPorPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,17 +277,17 @@
         private System.Windows.Forms.ComboBox CbxNombres;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnBuscar;
-        private System.Windows.Forms.DataGridView DgvProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridView DgvTotalPorPedido;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LblTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LblPagado;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LblSaldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTotalPagado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColSaldo;
     }
 }

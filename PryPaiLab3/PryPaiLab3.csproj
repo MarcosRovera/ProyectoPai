@@ -67,7 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ClsNodo.cs" />
+    <Compile Include="Clases\ClsPago.cs" />
     <Compile Include="Clases\ClsPilaPedidos.cs" />
+    <Compile Include="Clases\ClsTotalPorCliente.cs" />
     <Compile Include="ClsCliente.cs" />
     <Compile Include="Clases\ClsPedido.cs" />
     <Compile Include="ClsProducto.cs" />
