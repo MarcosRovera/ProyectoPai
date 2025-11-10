@@ -45,9 +45,10 @@
             this.editarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevosPedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pAGOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nUEVOPAGOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.productosMasVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +67,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(1902, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1902, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -139,10 +140,11 @@
             this.listadoDeProductosToolStripMenuItem,
             this.toolStripSeparator2,
             this.agregarNuevoProductoToolStripMenuItem,
-            this.editarProductoToolStripMenuItem});
+            this.editarProductoToolStripMenuItem,
+            this.productosMasVendidosToolStripMenuItem});
             this.productosToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
@@ -194,19 +196,9 @@
             this.nuevosPedidosToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.nuevosPedidosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.nuevosPedidosToolStripMenuItem.Name = "nuevosPedidosToolStripMenuItem";
-            this.nuevosPedidosToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.nuevosPedidosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nuevosPedidosToolStripMenuItem.Text = "Nuevos Pedidos";
             this.nuevosPedidosToolStripMenuItem.Click += new System.EventHandler(this.nuevosPedidosToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(567, 211);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(835, 553);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // pAGOSToolStripMenuItem
             // 
@@ -220,9 +212,26 @@
             // nUEVOPAGOToolStripMenuItem
             // 
             this.nUEVOPAGOToolStripMenuItem.Name = "nUEVOPAGOToolStripMenuItem";
-            this.nUEVOPAGOToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nUEVOPAGOToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.nUEVOPAGOToolStripMenuItem.Text = "NUEVO PAGO";
             this.nUEVOPAGOToolStripMenuItem.Click += new System.EventHandler(this.nUEVOPAGOToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(567, 211);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(835, 553);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // productosMasVendidosToolStripMenuItem
+            // 
+            this.productosMasVendidosToolStripMenuItem.Name = "productosMasVendidosToolStripMenuItem";
+            this.productosMasVendidosToolStripMenuItem.Size = new System.Drawing.Size(311, 26);
+            this.productosMasVendidosToolStripMenuItem.Text = "Productos mas vendidos";
+            this.productosMasVendidosToolStripMenuItem.Click += new System.EventHandler(this.productosMasVendidosToolStripMenuItem_Click);
             // 
             // FrmInicio
             // 
@@ -266,5 +275,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem pAGOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nUEVOPAGOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosMasVendidosToolStripMenuItem;
     }
 }

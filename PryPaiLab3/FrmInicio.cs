@@ -80,5 +80,11 @@ namespace PryPaiLab3
             FrmPago frmPago = new FrmPago();
             frmPago.ShowDialog();
         }
+
+        private void productosMasVendidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProductosVendidos frm = new FrmProductosVendidos();
+            frm.ShowDialog();
+        }
     }
 }
